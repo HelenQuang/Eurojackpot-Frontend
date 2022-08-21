@@ -1,19 +1,19 @@
-import { Paper, Container, Box, Typography, Avatar } from "@mui/material";
+import { Container, Box, Typography, Avatar } from "@mui/material";
 import logo from "../../images/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <Paper
+    <Box
       sx={{
         width: "100%",
-        position: "fixed",
+
         bottom: 0,
+        py: 1,
+        borderTop: "solid 0.5px #00000013",
       }}
       component="footer"
-      square
-      variant="outlined"
     >
       <Container maxWidth="lg">
         <Box
@@ -40,7 +40,7 @@ const Footer = () => {
           </Typography>
         </Box>
       </Container>
-    </Paper>
+    </Box>
   );
 };
 

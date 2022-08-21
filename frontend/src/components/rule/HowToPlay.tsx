@@ -9,7 +9,7 @@ const HowToPlay = () => {
         style={{ fontSize: "0.8rem", marginTop: "1rem", marginLeft: "1.5rem" }}
       >
         <li>
-          Player can select five main numbers from 1 to 50 and then two
+          Player must select five main numbers from 1 to 50 and then two
           additional star numbers from 1 to 12.
         </li>
         <li>

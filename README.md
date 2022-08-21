@@ -1,1 +1,1 @@
-# Eurojack Stimulator
+# Eurojackpot Stimulator

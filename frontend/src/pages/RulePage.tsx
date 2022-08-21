@@ -1,14 +1,11 @@
-import React from "react";
-import { Paper } from "@mui/material";
-
 import HowToPlay from "../components/rule/HowToPlay";
-import PrizeTable from "../components/rule/PrizeTable";
+import OddTable from "../components/rule/OddTable";
 
 const RulePage = () => {
   return (
     <>
       <HowToPlay />
-      {/* <PrizeTable /> */}
+      <OddTable />
     </>
   );
 };
