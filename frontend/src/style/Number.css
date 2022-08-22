@@ -1,0 +1,50 @@
+.number-box {
+  display: flex;
+  flex-direction: column;
+  margin: 0 1rem 2rem;
+}
+
+.label {
+  margin-bottom: 0.8rem;
+}
+
+.number-grid {
+  display: grid;
+  grid-gap: 0.25rem;
+  width: 100%;
+  grid-auto-rows: 2rem;
+  grid-template-columns: repeat(10, 2rem);
+  justify-content: center;
+}
+
+.number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  transition: border-radius 0.2s ease-in-out, background-color 0.1s ease-in-out;
+  background-color: var(--light-purple);
+}
+
+.number:hover {
+  cursor: pointer;
+  box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 24%);
+  background-color: var(--bg-purple);
+}
+
+.active {
+  background-color: #72008c !important;
+  color: #fff !important;
+  cursor: pointer;
+  pointer-events: all !important;
+  border-radius: 50%;
+}
+
+.disable {
+  cursor: default;
+  background-color: #ebeff5;
+  pointer-events: none;
+  transition: none;
+}

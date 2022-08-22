@@ -8,6 +8,7 @@ import Footer from "./components/layout/Footer";
 
 import HomePage from "./pages/HomePage";
 import RulePage from "./pages/RulePage";
+import AboutPage from "./pages/AboutPage";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/rule" element={<RulePage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
       </Container>
       <Footer />

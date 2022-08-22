@@ -21,6 +21,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 const pages = [
   { name: "Game", to: "/" },
   { name: "Rule", to: "/rule" },
+  { name: "About", to: "/about" },
 ];
 const settings = ["Profile", "Transaction", "History", "Logout"];
 

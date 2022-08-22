@@ -6,7 +6,6 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Paper,
   Box,
 } from "@mui/material";
 
@@ -78,7 +77,7 @@ const OddTable = () => {
     <div style={{ margin: "2rem 0" }}>
       <h2>Odd of Winning Table</h2>
       <TableContainer component={Box} style={{ marginTop: "1rem" }}>
-        <Table sx={{ minWidth: 650 }} aria-label="caption table">
+        <Table sx={{ minWidth: 650, maxWidth: 750 }} aria-label="caption table">
           <caption>Source: Euro-jackpot.net</caption>
           <TableHead>
             <TableRow
@@ -116,12 +115,26 @@ const OddTable = () => {
                   ":nth-of-type(2n)": {
                     backgroundColor: "var(--light-purple)",
                   },
-                  borderBottom: "solid 0.2px #000",
                 }}
               >
-                <TableCell align="center">{row.tier}</TableCell>
-                <TableCell align="center">{row.odd}</TableCell>
-                <TableCell align="center">{row.prize}</TableCell>
+                <TableCell
+                  align="center"
+                  sx={{ borderBottom: "solid 0.2px #000", fontSize: "0.8rem" }}
+                >
+                  {row.tier}
+                </TableCell>
+                <TableCell
+                  align="center"
+                  sx={{ borderBottom: "solid 0.2px #000", fontSize: "0.8rem" }}
+                >
+                  {row.odd}
+                </TableCell>
+                <TableCell
+                  align="center"
+                  sx={{ borderBottom: "solid 0.2px #000", fontSize: "0.8rem" }}
+                >
+                  {row.prize}
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
