@@ -23,7 +23,12 @@ const pages = [
   { name: "Rule", to: "/rule" },
   { name: "About", to: "/about" },
 ];
-const settings = ["Profile", "Transaction", "History", "Logout"];
+const settings = [
+  { name: "Profile", to: "/profile" },
+  { name: "Transaction", to: "/transaction" },
+  { name: "History", to: "/history" },
+  { name: "Logout", to: "/" },
+];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -45,9 +50,10 @@ const ResponsiveAppBar = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  // const handleCloseUserMenu = (link: any) => {
+  //   setAnchorElUser(null);
+  //   navigate(`${link}`);
+  // };
 
   const navigate = useNavigate();
 
@@ -179,11 +185,19 @@ const ResponsiveAppBar = () => {
                 horizontal: "right",
               }}
               open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
+              onClose={() => {
+                setAnchorElUser(null);
+              }}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                <MenuItem
+                  key={setting.name}
+                  onClick={() => {
+                    navigate(`${setting.to}`);
+                    setAnchorElUser(null);
+                  }}
+                >
+                  <Typography textAlign="center">{setting.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
