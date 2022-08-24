@@ -14,7 +14,9 @@ const AboutPage = () => {
 
       <h2 style={{ marginTop: "2rem" }}>Technologies</h2>
 
-      <ul style={{ fontSize: "0.8rem", marginTop: "1rem" }}>
+      <ul
+        style={{ fontSize: "0.8rem", marginTop: "1rem", marginBottom: "1rem" }}
+      >
         <li>
           <strong>Frontend:</strong> React JS, TypeScript, Redux, React Router
           DOM, Material UI.

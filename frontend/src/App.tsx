@@ -14,6 +14,7 @@ import SignUpPage from "./pages/SignUpPage";
 import ProfilePage from "./pages/ProfilePage";
 import TransactionPage from "./pages/TransactionPage";
 import GameHistoryPage from "./pages/GameHistoryPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/transaction" element={<TransactionPage />} />
           <Route path="/history" element={<GameHistoryPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Container>
       <Footer />
