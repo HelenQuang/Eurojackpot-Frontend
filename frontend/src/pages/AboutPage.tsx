@@ -14,17 +14,18 @@ const AboutPage = () => {
 
       <h2 style={{ marginTop: "2rem" }}>Technologies</h2>
 
-      <ul
-        style={{ fontSize: "0.8rem", marginTop: "1rem", marginLeft: "1.5rem" }}
-      >
+      <ul style={{ fontSize: "0.8rem", marginTop: "1rem" }}>
         <li>
-          Frontend: React JS, TypeScript, Redux, React Router DOM, Material UI.
+          <strong>Frontend:</strong> React JS, TypeScript, Redux, React Router
+          DOM, Material UI.
         </li>
-        <li>Backend: Mongo DB, Express JS, Node JS</li>
         <li>
-          Other libraries: Mongo DB Atlas and Compass, Nodemon, Mongoose,
-          Bcrypt, Express Async Handler, Postman, JSON Web Token, Axios, React
-          Paypal, React Helmet
+          <strong>Backend:</strong> Mongo DB, Express JS, Node JS
+        </li>
+        <li>
+          <strong>Other libraries:</strong> Mongo DB Atlas and Compass, Nodemon,
+          Mongoose, Bcrypt, Express Async Handler, Postman, JSON Web Token,
+          Axios, React Paypal, React Helmet
         </li>
       </ul>
     </>
