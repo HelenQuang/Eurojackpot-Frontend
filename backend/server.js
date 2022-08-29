@@ -15,6 +15,9 @@ connectDB();
 
 const app = express();
 
+//To accept raw JSON passing in the body of request
+app.use(express.json());
+
 //User Routes:
 app.use("/api/users", userRoutes);
 
