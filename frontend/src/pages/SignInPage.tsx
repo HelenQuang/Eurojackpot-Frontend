@@ -8,12 +8,12 @@ import {
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
-import type { RootState } from "../store";
-import { useSelector, useDispatch } from "react-redux";
+
+import { useAppDispatch, useAppSelector } from "../hooks";
 import { userLogin } from "../slices/userSlice";
 
 const SignInPage = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return (
     <Box

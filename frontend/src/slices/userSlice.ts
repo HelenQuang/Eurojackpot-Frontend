@@ -3,6 +3,7 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 
 import userInfoModel from "../models/userInfoModel";
 import transactionHistoryModel from "../models/transactionHistoryModel";
+import errorModel from "../models/errorModel";
 
 interface UserState {
   isLogin: boolean | null;
@@ -10,6 +11,7 @@ interface UserState {
   loading: boolean;
   userInfo: userInfoModel | null;
   transactionHistory: transactionHistoryModel[];
+  error: string | null;
 }
 
 const userInfoFromStorage = localStorage.getItem("userInfo")
@@ -28,12 +30,17 @@ const initialState: UserState = {
   loading: false,
   userInfo: userInfoFromStorage,
   transactionHistory: [],
+  error: null,
 };
 
 export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
+    userLoginRequest: (state) => {
+      state.loading = true;
+    },
+
     userLogin: (state, action: PayloadAction<userInfoModel>) => {
       state.loading = false;
       state.isLogin = true;
@@ -46,6 +53,11 @@ export const userSlice = createSlice({
       };
     },
 
+    userLoginFail: (state, action: PayloadAction) => {
+      state.loading = false;
+      state.error = action.payload!;
+    },
+
     userLogout: (state) => {
       state.loading = false;
       state.isLogin = false;
@@ -54,5 +66,6 @@ export const userSlice = createSlice({
   },
 });
 
-export const { userLogin, userLogout } = userSlice.actions;
+export const { userLoginRequest, userLogin, userLoginFail, userLogout } =
+  userSlice.actions;
 export default userSlice.reducer;
