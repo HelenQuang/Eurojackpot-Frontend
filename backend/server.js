@@ -1,46 +1,29 @@
-import express from "express";
 import dotenv from "dotenv";
 import colors from "colors";
 
 import connectDB from "./config/db.js";
-import users from "./data/users.js";
-import userRoutes from "./routes/userRoutes.js";
-import lotteryRoutes from "./routes/lotteryRoutes.js";
 
-import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
+process.on("uncaughtException", (err) => {
+  console.log("UNCAUGHT EXCEPTION! SHUTING DOWN...");
+  process.exit(1);
+});
 
 dotenv.config();
-
 connectDB();
+const app = require("./app");
 
-const app = express();
-
-//To accept raw JSON passing in the body of request
-app.use(express.json());
-
-//User Routes:
-app.use("/api/users", userRoutes);
-
-//Lottery Routes:
-app.use("/api/lottery", lotteryRoutes);
-
-app.get("/", (req, res) => {
-  res.send("API is running...");
-});
-
-app.get("/api/users", (req, res) => {
-  res.json(users);
-});
-
-//Error Handler Middleware
-app.use(notFound);
-app.use(errorHandler);
-
-const PORT = process.env.PORT || 3000;
-app.listen(
-  PORT,
+//Start server
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
   console.log(
-    `Server running in ${process.env.NODE_ENV} on port ${PORT}`.brightYellow
-      .bold
-  )
-);
+    `Server running in ${process.env.NODE_ENV} on port ${port}`.bgYellow.bold
+  );
+});
+
+process.on("unhandledRejection", (err) => {
+  console.log("UNHANDLED REJECTION! SHUTING DOWN...");
+  console.log(err.name, err.message);
+  server.close(() => {
+    process.exit(1);
+  });
+});
