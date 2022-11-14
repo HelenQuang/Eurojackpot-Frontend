@@ -4,7 +4,8 @@ import colors from "colors";
 import connectDB from "./config/db.js";
 
 process.on("uncaughtException", (err) => {
-  console.log("UNCAUGHT EXCEPTION! SHUTING DOWN...");
+  console.log(err);
+  // console.log("UNCAUGHT EXCEPTION! SHUTING DOWN...");
   process.exit(1);
 });
 

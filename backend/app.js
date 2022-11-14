@@ -8,7 +8,7 @@ import cookieParser from "cookie-parser";
 
 import AppError from "./utils/appError.js";
 import globalErrHandler from "./controllers/errorController";
-// import users from "./data/users.js";
+import users from "./data/users.js";
 import userRoutes from "./routes/userRoutes.js";
 import lotteryRoutes from "./routes/lotteryRoutes.js";
 
@@ -60,8 +60,8 @@ app.all("*", (req, res, next) => {
 
 app.use(globalErrHandler);
 
-// app.get("/api/users", (req, res) => {
-//   res.json(users);
-// });
+app.get("/api/users", (req, res) => {
+  res.json(users);
+});
 
 module.exports = app;
