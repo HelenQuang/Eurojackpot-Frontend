@@ -1,6 +1,6 @@
 import asyncHandler from "express-async-handler";
 
-import generateToken from "../utils/generateToken.js";
+import generateToken from "../controllers/authController.js";
 import User from "../models/userModel.js";
 
 //@desc    Authentication user and get token to access protected routes
